@@ -1,0 +1,22 @@
+
+
+Program jest zmodyfikowaną wersją arkanoida. 
+
+Użytana jest biblioteka pygame. Jej glownym celem w zalozeniu jest odpowiadanie za interfejs graficzny. 
+
+Sterowanie odbywa się klawiszami A,D oraz SHIFT
+
+Klasa paddle odpowiada za paletkę, którą steruje gracz. Jest to symulacja, w której trzymając klawisz działamy pewną siłą na paletkę, nadając jej przyspieszenie,
+(przytrzymując klawisz shift używamy większej siły), 
+ze względu na opór paletka sama wychamowuje, rozpędzona odbija się strężyście od krawędzi przestrzeni, na której odbywa się rozgrywka.
+
+Klasa ball odpowiada za obiekt zbijający, posiada dwa wektory prędkości, horyzontalny i wertykalny. W niej następuje sprawdzenie czy doszło do kolizji z z paletką lub 
+krawędzią pola, na którym odbywa się rozgrywka.
+W zależności od sytuacji obiekt zbijający odbija się w konkretny sposób, lub rozgrywka się kończy się przegraną w przypadku kolizji z dolną krawędzią ekranu
+
+Klasa Brick odpowiada za obiekty cegiel, każdy obiekt osobną instancją mającą detekcję kolizji z piłką. W przypadku kolizji liczba punktów wytrzymałości danej cegly
+ ulega dekrementacji, w przypadku osiagniecia wartosci 0 dana cegla znika z gry.
+kolor cegly zalezy od ilosci pozostalych punktow wytrzymalosci cegiel w danym momencie 
+jeśli cegła ma 4 lub więcej punktów wytrzymalosci ma kolor niebieski, w przypadku 3 - zielony, w przypadku 2 - żółty, jeśli już tylko jedno uderzenie ją zniszczy - czerwony.
+gra konczy sie wygrana w momencie zniszczenia wszystkich cegiel.
+
